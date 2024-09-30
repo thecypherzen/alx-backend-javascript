@@ -1,5 +1,3 @@
-#!/usr/bin/node
-
 /**
  * A Test documentation
  */
