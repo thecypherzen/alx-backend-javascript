@@ -3,7 +3,7 @@ export default function getFullResponseFromAPI(success) {
     if (success) {
       resolve({ status: 200, body: 'Success' });
     } else {
-      reject('The fake API is not working currently');
+      reject('The fake API is not working currently'); // eslint-disable-line prefer-promise-reject-errors
     }
   });
 }
