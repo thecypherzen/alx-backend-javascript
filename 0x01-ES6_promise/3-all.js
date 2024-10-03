@@ -1,10 +1,16 @@
 import { uploadPhoto, createUser } from './utils';
 
+/**
+ * handleProfileSignup - collectively resolves promises
+ *   returned by two functions.
+ *   => on resolution, logs response in format `body firstName lastName`
+ *   => on error, logs a message
+ * returns: void
+ */
 export default function handleProfileSignup() {
   Promise.all([uploadPhoto(), createUser()])
     .then((res) => {
-      const output = { ...res[0], ...res[1] };
-      console.log(`${output.body} ${output.firstName} ${output.lastName}`);
+      console.log(`${res[0].body} ${res[1].firstName} ${res[1].lastName}`);
     })
     .catch(() => {
       console.log('Signup system offline');
