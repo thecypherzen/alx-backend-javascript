@@ -1,5 +1,8 @@
 /**
+ * Representation of an Airport
  *
+ * @param {name} - the name of the airport
+ * @param {code} - the short code for the airport
  */
 export default class Airport {
   constructor(name, code) {
