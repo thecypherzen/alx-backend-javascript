@@ -1,3 +1,8 @@
+/**
+ * Represents a Holberton Class
+ * @param {number} size - number of students in class
+ * @param {string} location - class location
+ */
 export default class HolbertonClass {
   constructor(size, location) {
     /* eslint no-underscore-dangle: ["error", {"allow": ["_size", "_location"]}] */
@@ -17,10 +22,10 @@ export default class HolbertonClass {
 
   /* using symbols to achieve the same thing */
   [Symbol.toPrimitive](hint) {
-    if (hint === 'string') {
+    if (hint === "string") {
       return this._location;
     }
-    if (hint === 'number') {
+    if (hint === "number") {
       return this._size;
     }
     return this.toString();
