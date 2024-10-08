@@ -8,6 +8,9 @@
  */
 export default function cleanSet(set, startString) {
   const matched = [];
+  if (!(set instanceof Set) || typeof startString !== 'string') {
+    return '';
+  }
   set.forEach((element) => {
     if (startString.length && element.startsWith(startString)) {
       matched.push(element.slice(startString.length));
