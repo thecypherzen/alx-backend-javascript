@@ -1,5 +1,4 @@
-/** definie an interface */
-
+/* define interface */
 interface Student {
     firstName: string;
     lastName: string;
@@ -7,6 +6,7 @@ interface Student {
     location: string;
 }
 
+/* create students */
 const studentA: Student = {
     firstName: "James",
     lastName: "Jackson",
@@ -21,9 +21,19 @@ const studentB = {
     age: 24,
 };
 
-console.log(typeof studentB);
+/* create array and table with data */
 const studentsList = [studentA, studentB];
 const table = document.createElement("table");
+const tBody = document.createElement("tbody");
+const tHead = document.createElement("thead");
+const tHeadData = `
+	<tr>
+		<th scope="col">First Name</th>
+		<th scope="col">Location</th>
+	</tr>
+`;
+tHead.innerHTML = tHeadData;
+table.appendChild(tHead);
 let rows = "";
 studentsList.forEach((student) => {
     rows += `
@@ -33,4 +43,7 @@ studentsList.forEach((student) => {
     </tr>
 	`;
 });
-table.innerHTML = rows;
+/* add table to document */
+tBody.innerHTML = rows;
+table.appendChild(tBody);
+document.body.appendChild(table);
