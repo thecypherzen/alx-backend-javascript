@@ -1,5 +1,5 @@
-/* define interface teacher interface */
-export interface Teacher {
+/* teacher interface */
+interface Teacher {
     readonly firstName: string;
     readonly lastName: string;
     fullTimeEmployee: boolean;
@@ -8,7 +8,18 @@ export interface Teacher {
     [key: string]: any;
 }
 
-/* define the Directors interface */
-export interface Directors extends Teacher {
+/* Directors interface */
+interface Directors extends Teacher {
     numberOfReports: number;
 }
+
+/* Printeacher function interface and function */
+interface printTeacherFunction {
+    (arg1: string, arg2: string): string;
+}
+
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+    return `${firstName[0]}. ${lastName}`;
+};
+
+export { Directors, printTeacher, printTeacherFunction, Teacher };
