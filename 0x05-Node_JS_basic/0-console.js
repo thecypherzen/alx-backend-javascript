@@ -1,0 +1,7 @@
+/* Defines a fuction */
+
+function displayMessage(msg) {
+  process.stdout.write(`${msg}\n`);
+}
+
+module.exports = displayMessage;
