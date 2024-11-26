@@ -34,7 +34,7 @@ const app = createServer((req, res) => {
         })
         .catch(() => {
           res.statusCode = 500;
-          res.end(resBody);
+          res.end('');
         })
         .finally(() => {
           console.log = oldLog;
