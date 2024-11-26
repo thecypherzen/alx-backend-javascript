@@ -8,7 +8,7 @@
  *   'Number of students in FIELD: COUNT. List: LIST_OF_FIRSTNAMES'
  * - empty lines are not valid students
  */
-const fs = require('node:fs');
+const fs = require('fs');
 
 function countStudents(dbPath) {
   const details = {};
