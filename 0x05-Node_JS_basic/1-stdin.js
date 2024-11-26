@@ -8,8 +8,8 @@
  *    'This important software is now closing'
  *     (followed by a new line)
  */
-
-console.log('Welcome to Holberton School, what is your name?');
+const msg = 'Welcome to Holberton School, what is your name?';
+process.stdout.write(`${msg}\n`);
 process.stdin.setEncoding('utf-8');
 process.stdin.on('readable', () => {
   let input = null;
@@ -20,10 +20,10 @@ process.stdin.on('readable', () => {
     } else {
       input += chunck;
     }
-    console.log(`Your name is: ${input}`);
+    process.stdout.write(`Your name is: ${input}`);
   }
 });
 
 process.stdin.on('end', () => {
-  console.log('This important software is now closing');
+  process.stdout.write('This important software is now closing\n');
 });
