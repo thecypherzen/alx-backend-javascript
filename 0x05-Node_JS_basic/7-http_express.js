@@ -20,7 +20,7 @@ app.get('/students', (req, res) => {
       res.send(`This is the list of our students\n${resBody}`);
     })
     .catch((err) => {
-      res.send(err);
+      res.status(500).send(`${err.message}`);
     })
     .finally(() => {
       console.log = oldLog;
