@@ -17,6 +17,7 @@ app.get('/students', (req, res) => {
   console.log = (...arg) => {
     resBody += `${arg}\n`;
   };
+  // execute function and capture output
   countStudents(process.argv[2])
     .then(() => {
       res.send(resBody);
@@ -25,6 +26,7 @@ app.get('/students', (req, res) => {
       res.status(500).send(`${resBody}${err.message}`);
     })
     .finally(() => {
+      // restore stdout
       console.log = oldLog;
     });
 });
