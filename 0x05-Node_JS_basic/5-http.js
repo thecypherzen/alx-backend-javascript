@@ -32,9 +32,9 @@ const app = createServer((req, res) => {
           res.status_code = 200;
           res.end(resBody);
         })
-        .catch(() => {
+        .catch((err) => {
           res.statusCode = 500;
-          res.end('');
+          res.end(`${resBody}${err.message}`);
         })
         .finally(() => {
           console.log = oldLog;
