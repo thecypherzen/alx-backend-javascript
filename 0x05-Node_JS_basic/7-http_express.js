@@ -5,22 +5,24 @@ const express = require('express');
 const countStudents = require('./3-read_file_async');
 
 const app = express();
+// root route
 app.get('/', (req, res) => {
   res.send('Hello Holberton School!');
 });
-
+// students route
 app.get('/students', (req, res) => {
-  let resBody = '';
+  let resBody = 'This is the list of our students\n';
+  // redirect stdout
   const oldLog = console.log;
   console.log = (...arg) => {
     resBody += `${arg}\n`;
   };
   countStudents(process.argv[2])
     .then(() => {
-      res.send(`This is the list of our students\n${resBody}`);
+      res.send(resBody);
     })
     .catch((err) => {
-      res.status(500).send(`${err.message}`);
+      res.status(500).send(`${resBody}${err.message}`);
     })
     .finally(() => {
       console.log = oldLog;
