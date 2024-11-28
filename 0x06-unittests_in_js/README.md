@@ -1,6 +1,5 @@
 # Overview #
-NodeJS...hmmm...I'll be back on this later jare
-
+How to to unittest in Node/JS.
 
 ## Resources for Reference ##
 - [Node JS getting started](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs).
@@ -12,17 +11,15 @@ NodeJS...hmmm...I'll be back on this later jare
 
 
 ## Folder Details ###
-- **Date Created:** Mon 25 Nov 2024 **
+- **Date Created:** Thur 28 Nov 2024 **
 - **Author:** [William Inyam](https.//github.com/thecypherzen).
 - **Project Timeline:**
-  - **Released:** Mon 25 Nov 2024 - 6am.
-  - **1st Deadline:** . Wed 27 Nov 2024 - 6am.
-  - **Duration:** 48hrs.<br/>
+  - **Released:** Wed 27 Nov 2024 - 6am.
+  - **1st Deadline:** . Fri 29 Nov 2024 - 6am.
+  - **Duration:** 48hrs.
+  - **Completed:** TBD. <br/>
 
-## Environment ###
-- [database.csv]()
-- [package.json]()
-- [babel.config.json]()
+
 
 
 ## Files ###
