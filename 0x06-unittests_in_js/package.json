@@ -4,12 +4,17 @@
   "description": "How to to unittest in Node/JS.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha || true"
+    "test": "./node_modules/.bin/mocha",
+    "lint": "./node_modules/.bin/eslint"
   },
   "author": "William Inyam",
   "license": "ISC",
   "devDependencies": {
     "chai": "^5.1.2",
-    "mocha": "^10.8.2"
+    "mocha": "^10.8.2",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.17.0"
   }
 }
