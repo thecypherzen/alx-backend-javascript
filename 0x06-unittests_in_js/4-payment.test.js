@@ -2,19 +2,19 @@
 const expect = require('chai').expect;
 const sinon = require('sinon');
 const sendPayment = require('./3-payment');
-const calculateNumber = require('./utils').calculateNumber;
+const Utils = require('./utils');
 
 describe('sendPaymentRequestToApi', () => {
   afterEach(() => {
     sinon.restore();
   });
 
-  it('should be called with (100, 20)', () => {
-    const sendPaymentSpy = sinon.spy(sendPayment);
-    const calculateSpy = sinon.spy(calculateNumber);
+  it('stubbing calculateNumber', () => {
+    const logSpy = sinon.spy(console, 'log');
+    const calculateStub = sinon.stub(Utils, 'calculateNumber');
+    calculateStub.returns(10);
     sendPayment(100, 20);
-    expect(sendPaymentSpy.calledOnce);
-    expect(sendPaymentSpy.calledOnceWith(100, 20));
-    expect(calculateSpy.calledAfter(sendPaymentSpy));
+    expect(calculateStub.calledWith('SUM', 100, 20));
+    expect(logSpy.calledWith('The total is: 10'));
   });
  });
