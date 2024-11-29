@@ -5,6 +5,10 @@ const sendPayment = require('./3-payment');
 const calculateNumber = require('./utils').calculateNumber;
 
 describe('sendPaymentRequestToApi', () => {
+  afterEach(() => {
+    sinon.restore();
+  });
+
   it('should be called with (100, 20)', () => {
     const sendPaymentSpy = sinon.spy(sendPayment);
     const calculateSpy = sinon.spy(calculateNumber);
