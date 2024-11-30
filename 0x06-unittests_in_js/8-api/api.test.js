@@ -1,38 +1,50 @@
-const axios = require('axios');
+const http = require('http');
 const { assert } = require('chai');
 
 /* eslint-disable */
 describe('test api if successful', () => {
   let response;
+  let resData = '';
   let error = false;
 
   before((done) => {
-    axios.get('http://localhost:7865')
-         .then((res) => {
-           response = res;
-         })
-         .catch((error) => { error = true })
-         .finally(() => { done(); });
+    http.get('http://localhost:7865', (res) => {
+      response = res;
+      res.on('data', (chunk) => {
+        resData += chunk;
+      });
+      res.on('end', () => {
+        try {
+          resData = JSON.parse(resData);
+        } catch (err) {
+          // do nothing here...
+        }
+        finally {
+          done();
+        }
+      })
+         .on('error', (err) => { console.log('error'); });
+    });
   });
 
   //test cases
   it('method is get', () => {
-    assert.equal(response.request.method, 'GET');
+    assert.equal(response.req.method, 'GET');
   });
 
   it('request path is /', () => {
-    assert.equal(response.request.path, '/');
+    assert.equal(response.req.path, '/');
   });
 
   it('status code should be 200', () => {
-    assert.equal(response.status, 200);
+    assert.equal(response.statusCode, 200);
   });
 
   it('response value should be a string', () => {
-    assert.isString(response.data)
+    assert.isString(resData);
   });
   it('response value should be valid', () => {
-    assert.isOk(response.data);
-    assert.equal(response.data, 'Welcome to the payment system');
+    assert.isOk(resData);
+    assert.equal(resData, 'Welcome to the payment system');
   });
 });
