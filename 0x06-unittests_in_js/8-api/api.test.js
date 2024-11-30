@@ -16,6 +16,14 @@ describe('test api if successful', () => {
   });
 
   //test cases
+  it('method is get', () => {
+    assert.equal(response.request.method, 'GET');
+  });
+
+  it('request path is /', () => {
+    assert.equal(response.request.path, '/');
+  });
+
   it('status code should be 200', () => {
     assert.equal(response.status, 200);
   });
