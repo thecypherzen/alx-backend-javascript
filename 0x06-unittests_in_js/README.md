@@ -17,7 +17,7 @@ How to to unittest in Node/JS.
   - **Released:** Wed 27 Nov 2024 - 6am.
   - **1st Deadline:** . Fri 29 Nov 2024 - 6am.
   - **Duration:** 48hrs.
-  - **Completed:** TBD. <br/>
+  - **Completed:** Sun 1 Dec 2024 - 1:48pm . <br/>
 
 
 
