@@ -37,7 +37,7 @@ app.post('/login', (req, res) => {
   const body = req.body;
   if (!body || typeof body !== 'object' ||
       !Object.keys(body).includes('userName')) {
-    res.status(400).send();
+    return res.status(400).send();
   }
   res.send(`Welcome ${body.userName}`);
 });
